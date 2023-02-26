@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+read.txt
 /.pnp
 .pnp.js
 
