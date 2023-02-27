@@ -93,7 +93,23 @@ export const logout = async (req, res) => {
 
 };
 
-export const getMe = async (req, res) => { };
+export const getMe = async (req, res) => {
+    try {
+        const user = await User.findById(req.user);
+        if (!user) {
+            return res.status(404).json({ message: "User not found...", user: rest })
+        }
+        const { password: pass, ...rest } = user._doc;
+        return res.status(200).json({ message: "User found..." })
+
+
+    } catch (error) {
+        console.error(error.message);
+        res
+            .status(500)
+            .json({ error: "Internal server error..." })
+    }
+};
 
 export const updateDetails = async (req, res) => { };
 
