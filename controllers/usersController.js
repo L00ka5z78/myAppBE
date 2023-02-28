@@ -20,7 +20,7 @@ export const register = async (req, res) => {
 
         // create new user and insert in database
 
-        user = newUser({
+        user = new User({
             name, email, age, password: hashedPassword,
         })
         await user.save();
