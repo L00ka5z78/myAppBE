@@ -174,6 +174,13 @@ export const deleteUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
+        // delete tasks belongs to exact user if user is deleted
+        const todo = await Todo.find({ user: req.user });
+        if (todo) {
+            await Todo.deleteMany({ user: req.user })
+        }
+        res.clearCookie("token")        //added after postman testing -- check for errors
+
         await user.remove();
         res.status(200).json({ message: "User deleted successfully" })
     } catch (error) {
