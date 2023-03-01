@@ -174,7 +174,7 @@ export const deleteUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        // delete tasks belongs to deleted user
+        // delete tasks belongs to exact user if user is deleted
         const todo = await Todo.find({ user: req.user });
         if (todo) {
             await Todo.deleteMany({ user: req.user })
