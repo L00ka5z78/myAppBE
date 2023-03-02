@@ -3,6 +3,7 @@
 # dependencies
 node_modules
 read.txt
+backupBE.txt
 /.pnp
 .pnp.js
 

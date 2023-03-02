@@ -14,6 +14,8 @@ router.get("/me", authorize, getMe);
 router.put('/updatedetails', authorize, updateDetailsRequirements, validateResult, updateDetails);
 router.put("/updatepassword", authorize, updatePasswordRequirements, validateResult, updatePassword);
 
-router.delete("/delete", authorize, deleteUser);
+// router.delete("/delete", authorize, deleteUser);
+router.delete("/delete", deleteUser);
+
 
 export default router
