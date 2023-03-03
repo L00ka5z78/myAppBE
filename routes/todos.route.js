@@ -8,16 +8,12 @@ const router = express.Router();
 
 // crud operations
 
-router.get("/:id", authorize, getTodo)
+router.get("/:id", authorize, getTodo);
+router.get("/", authorize, getTodos);
 
-router.get("/", authorize, getTodos)
+router.post("/create", authorize, createTaskRequirements, validateResult, createTodo);
+router.put("/update/:id", authorize, updateTaskRequirements, validateResult, updateTodo);
 
-router.post("/create", authorize, createTaskRequirements, validateResult, createTodo)
-
-router.put("/update/:id", authorize, updateTaskRequirements, validateResult, updateTodo)
-
-router.delete("/delete/:id", authorize, deleteTodo)
-
-
+router.delete("/delete/:id", authorize, deleteTodo);
 
 export default router

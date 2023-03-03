@@ -2,7 +2,9 @@ import { check } from 'express-validator';
 
 export const registerRequirements = [
     check("name", "MSG from validator: Name is required").notEmpty().trim().escape(),
-    check("email", "MSG from validator: Insert email").notEmpty().isEmail().normalizeEmail(),
+    check("email", "MSG from validator: Insert email").isEmail().normalizeEmail(),
+    // check("email", "MSG from validator: Insert email").notEmpty().isEmail().normalizeEmail(),
+
     check("password", "MSG from validator: Password has to be at least 6 characters long").isLength({ min: 6 }),
     check("age", "MSG from validator: Age is required").notEmpty().trim().escape().isNumeric()
 ];
