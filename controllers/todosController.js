@@ -80,7 +80,7 @@ export const deleteTodo = async (req, res) => {
             return res.status(401).json({ message: "Not authorized" })
         }
         await todo.remove();
-        return res.status(401).json({ message: "Todo deleted successfully" })
+        return res.status(200).json({ message: "Todo deleted successfully" })
     } catch (error) {
         console.error(error.message);
         res.status(500).send({ error: "Internal server error" })
