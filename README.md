@@ -13,7 +13,7 @@ JavaScript, ReactJs, TailwindCSS, MongoDB Compass, Express, NodeJS.
 
 git clone https://github.com/L00ka5z78/myAppFE
 
-Clone the backend of this project:
+### Clone the backend of this project:
 
 git clone https://github.com/L00ka5z78/myAppBE
 
@@ -54,7 +54,7 @@ newDevelop. It has one bug which need to be fixed, and I hope I will do it soon.
 
 ![folderstructure](https://user-images.githubusercontent.com/110019733/222970176-f3baf453-e984-4fd0-8b57-9aff0f2f4391.png)
 
-Project databes structure if needed:
+### Project databes structure if needed:
 
 ![dbstructure](https://user-images.githubusercontent.com/110019733/222970237-1126e989-f950-4561-a6db-d21b88ba703f.png)
 
@@ -74,6 +74,6 @@ Testing application with Postman
 
 ![postmancollection](https://user-images.githubusercontent.com/110019733/222971751-dd92305a-b4bc-44b8-a5de-c010285508d3.png)
 
-Wow... If you are here, and read all the way down, so maybe you will check my github account with my more or less successfull projects:
+#### Wow... If you are here, and read all the way down, so maybe you will check my github account with my more or less successfull projects:
 https://github.com/L00ka5z78
 
