@@ -46,10 +46,6 @@ Some screenshots
 ![viewtask](https://user-images.githubusercontent.com/110019733/222970830-6ed0b5e7-b8de-4987-882c-faf4f2621525.png)
 
 
-Project structure:
-
-![folderstructure](https://user-images.githubusercontent.com/110019733/222970176-f3baf453-e984-4fd0-8b57-9aff0f2f4391.png)
-
 Project databes structure if needed:
 
 ![dbstructure](https://user-images.githubusercontent.com/110019733/222970237-1126e989-f950-4561-a6db-d21b88ba703f.png)
