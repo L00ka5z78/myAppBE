@@ -1,7 +1,8 @@
 
-Hey there!
-This is Backend to an  immortal task list application. It is a project I wrote to test my skills in actually connecting backend and fronted.
-Aplication has CRUD operations, where one can add, remove, update, list tasks and single task. 
+#Hey there!#
+This is Backend to an  immortal task list application. 
+It is a project I wrote to test my skills in actually connecting backend and fronted.
+##Aplication has CRUD operations, where one can add, remove, update, list tasks and single task. 
 Also there is a registration form where you have to give some required data. Login form is also built.
 
 Tech stack used to build this project:
