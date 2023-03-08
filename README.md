@@ -1,5 +1,6 @@
 
-Hey there! This is Backend to an  immortal task list application. It is a project I wrote to test my skills in actually connecting backend and fronted.
+Hey there!
+This is Backend to an  immortal task list application. It is a project I wrote to test my skills in actually connecting backend and fronted.
 Aplication has CRUD operations, where one can add, remove, update, list tasks and single task. 
 Also there is a registration form where you have to give some required data. Login form is also built.
 
@@ -26,6 +27,14 @@ and run the database in the background in your backend.
 then run the project in the backend: npm run start.
 If everything went right,
 you will see messages that server is running and database is connected.
+
+Some thoughts..
+This is actually my very first project written with login/register/logout feature that works. 
+It took loads of time, a lot of effort, digging in docs, searching web looking for sollutions,
+and watching some videos how it is made. So final result is ok, but it was a real challege for me.
+
+The other thing is, that Im learning hard Typescript, and there is a typescript version on branch
+newDevelop. It has one bug which need to be fixed, and I hope I will do it soon.
 
 Some screenshots
 
@@ -63,5 +72,6 @@ Testing application with Postman
 
 ![postmancollection](https://user-images.githubusercontent.com/110019733/222971751-dd92305a-b4bc-44b8-a5de-c010285508d3.png)
 
-
+Wow... If you are here, and read all the way down, so maybe you will check my github account with my more or less successfull projects:
+https://github.com/L00ka5z78
 
