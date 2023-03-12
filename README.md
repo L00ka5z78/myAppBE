@@ -9,6 +9,15 @@ Also there is a registration form where you have to give some required data. Log
 ## Tech stack used to build this project:
 JavaScript, ReactJs, TailwindCSS, MongoDB Compass, Express, NodeJS.
 
+### Some thoughts..
+This is actually my very first project written with login/register/logout feature that works. 
+It took loads of time, a lot of effort, digging in docs, searching web looking for sollutions,
+and watching some videos how it is made. So final result is ok, but it was a real challege for me.
+
+The other thing is, that Im learning hard Typescript, and there is a typescript version on branch
+newDevelop. It has one bug which need to be fixed, and I hope I will do it soon. Check it out:
+https://github.com/L00ka5z78/myAppBE/tree/newDevelop
+
 ### To run this app you should clone frontend repository:
 
 git clone https://github.com/L00ka5z78/myAppFE
@@ -30,13 +39,6 @@ then run the project in the backend: npm run start.
 If everything went right,
 you will see messages that server is running and database is connected.
 
-### Some thoughts..
-This is actually my very first project written with login/register/logout feature that works. 
-It took loads of time, a lot of effort, digging in docs, searching web looking for sollutions,
-and watching some videos how it is made. So final result is ok, but it was a real challege for me.
-
-The other thing is, that Im learning hard Typescript, and there is a typescript version on branch
-newDevelop. It has one bug which need to be fixed, and I hope I will do it soon.
 
 ### Some screenshots
 
