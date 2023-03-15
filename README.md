@@ -39,6 +39,10 @@ then run the project in the backend: npm run start.
 If everything went right,
 you will see messages that server is running and database is connected.
 
+### Short video showing basic features of the project.
+In case I will not complete deployment before deadline
+
+https://youtu.be/QcKIlSe7fK0
 
 ### Some screenshots
 
