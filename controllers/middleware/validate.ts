@@ -1,34 +1,67 @@
 import { check } from 'express-validator';
 
 export const registerRequirements = [
-    check("name", "MSG from validator: Name is required").notEmpty().trim().escape(),
-    check("email", "MSG from validator: Insert email").notEmpty().isEmail().normalizeEmail(),
-    check("password", "MSG from validator: Password has to be at least 6 characters long").isLength({ min: 6 }),
-    check("age", "MSG from validator: Age is required").notEmpty().trim().escape().isNumeric()
+  check('name', 'WHOOPS... Name is required').notEmpty().trim().escape(),
+  check('email', 'WHOOPS... Insert email')
+    .notEmpty()
+    .isEmail()
+    .normalizeEmail(),
+  check(
+    'password',
+    'WHOOPS... Password has to be at least 6 characters long'
+  ).isLength({ min: 6 }),
+  check('age', 'WHOOPS... Age is required')
+    .notEmpty()
+    .trim()
+    .escape()
+    .isNumeric(),
 ];
 
 export const loginRequirements = [
-    check("email", "MSG from validator: Insert valid email").isEmail().normalizeEmail(),
-    check("password", "MSG from validator: Password has to be at least 6 characters long").isLength({ min: 6 }),
+  check('email', 'WHOOPS... Insert valid email').isEmail().normalizeEmail(),
+  check(
+    'password',
+    'WHOOPS... Password has to be at least 6 characters long'
+  ).isLength({ min: 6 }),
 ];
 
 export const updateDetailsRequirements = [
-    check("name", "MSG from validator: Name is required").notEmpty().trim().escape(),
-    check("email", "MSG from validator: Insert valid email").isEmail().normalizeEmail(),
-    check("age", "MSG from validator: Age is required").notEmpty().trim().escape().isNumeric()
+  check('name', 'WHOOPS... Name is required').notEmpty().trim().escape(),
+  check('email', 'WHOOPS...Insert valid email').isEmail().normalizeEmail(),
+  check('age', 'WHOOPS... Age is required')
+    .notEmpty()
+    .trim()
+    .escape()
+    .isNumeric(),
 ];
 export const updatePasswordRequirements = [
-    check("password", "MSG from validator: Password has to be at least 6 characters long").isLength({ min: 6 }),
-    check("newPassword", "MSG from validator: Password has to be at least 6 characters long").isLength({ min: 6 }),
+  check(
+    'password',
+    'WHOOPS... Password has to be at least 6 characters long'
+  ).isLength({ min: 6 }),
+  check(
+    'newPassword',
+    'WHOOPS... Password has to be at least 6 characters long'
+  ).isLength({ min: 6 }),
 ];
 
 export const createTaskRequirements = [
-    check("title", "MSG from validator: Title is required").notEmpty().trim().escape(),
-    check("description", "MSG from validator: Description is required").notEmpty().trim().escape(),
+  check('title', 'WHOOPS... Title is required').notEmpty().trim().escape(),
+  check('description', 'WHOOPS... Description is required')
+    .notEmpty()
+    .trim()
+    .escape(),
 ];
 
 export const updateTaskRequirements = [
-    check("title", "MSG from validator: Title is required").notEmpty().trim().escape(),
-    check("description", "MSG from validator:Description is required").notEmpty().trim().escape(),
-    check("completed", "MSG from validator: Completed is required").notEmpty().trim().escape().isBoolean()
+  check('title', 'WHOOPS... Title is required').notEmpty().trim().escape(),
+  check('description', 'WHOOPS... Description is required')
+    .notEmpty()
+    .trim()
+    .escape(),
+  check('completed', 'WHOOPS... Completed is required')
+    .notEmpty()
+    .trim()
+    .escape()
+    .isBoolean(),
 ];
