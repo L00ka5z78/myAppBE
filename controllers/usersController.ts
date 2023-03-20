@@ -2,9 +2,7 @@ import {User, UserDocument} from '../models/User';
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
 import {Todo} from '../models/Todo';
-import * as express from 'express';
 import {Request, Response} from 'express';
-// import { UserEntity } from '../types';
 
 export const register = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
     const {name, email, password, age} = req.body;
@@ -110,7 +108,6 @@ export const getMe = async (req: Request | any, res: Response, next: (err?: Erro
 export const updateDetails = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
     const {name, email, age} = req.body;
     try {
-        // let user = await User.findById(req.user);
         const user = await User.findById(req.user);
 
         if (!user) {
@@ -137,7 +134,7 @@ export const updatePassword = async (req: Request | any, res: Response, next: (e
     const {password, newPassword} = req.body;
     try {
         let user = await User.findById(req.user);
-        // const user = await User.findById(req.user);  //has to be let because it throws error during updateing password :/
+
         if (!user) {
             return res.status(404).json({message: 'User not found'});
         }

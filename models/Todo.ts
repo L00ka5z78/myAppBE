@@ -1,5 +1,5 @@
-import mongoose, { Model } from 'mongoose';
-import { UserDocument } from './User';
+import mongoose, {Model} from 'mongoose';
+import {UserDocument} from './User';
 
 type TodoType = TodoDocument & mongoose.Document;
 
@@ -31,7 +31,7 @@ const TodoSchema = new mongoose.Schema(
             required: true,
         },
     },
-    { timestamps: true }
+    {timestamps: true}
 );
 
-export const Todo: Model<TodoType> = mongoose.model<TodoType>(  'Todo',  TodoSchema);
+export const Todo: Model<TodoType> = mongoose.model<TodoType>('Todo', TodoSchema);

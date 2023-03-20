@@ -1,21 +1,21 @@
 import * as express from 'express';
 import {
-  register,
-  login,
-  logout,
-  getMe,
-  deleteUser,
-  updateDetails,
-  updatePassword,
+    register,
+    login,
+    logout,
+    getMe,
+    deleteUser,
+    updateDetails,
+    updatePassword,
 } from '../controllers/usersController';
-import { authorize } from '../controllers/middleware/authorize';
+import {authorize} from '../controllers/middleware/authorize';
 import {
-  registerRequirements,
-  loginRequirements,
-  updateDetailsRequirements,
-  updatePasswordRequirements,
+    registerRequirements,
+    loginRequirements,
+    updateDetailsRequirements,
+    updatePasswordRequirements,
 } from '../controllers/middleware/validate';
-import { validateResult } from '../controllers/middleware/validationResults';
+import {validateResult} from '../controllers/middleware/validationResults';
 
 const router = express.Router();
 
@@ -25,18 +25,18 @@ router.get('/logout', authorize, logout);
 
 router.get('/me', authorize, getMe);
 router.put(
-  '/updatedetails',
-  authorize,
-  updateDetailsRequirements,
-  validateResult,
-  updateDetails
+    '/updatedetails',
+    authorize,
+    updateDetailsRequirements,
+    validateResult,
+    updateDetails
 );
 router.put(
-  '/updatepassword',
-  authorize,
-  updatePasswordRequirements,
-  validateResult,
-  updatePassword
+    '/updatepassword',
+    authorize,
+    updatePasswordRequirements,
+    validateResult,
+    updatePassword
 );
 
 router.delete('/delete', authorize, deleteUser);
