@@ -15,7 +15,7 @@ It took loads of time, a lot of effort, digging in docs, searching web looking f
 and watching some videos how it is made. So final result is ok, but it was a real challege for me.
 
 The other thing is, that Im learning hard Typescript, and there is a typescript version on branch
-newDevelop. It has one bug which need to be fixed, and I hope I will do it soon. Check it out:
+newDevelop. Right now (20.03.23) it has one bug which need to be fixed, and I hope I will do it soon. Check it out:
 https://github.com/L00ka5z78/myAppBE/tree/newDevelop
 
 ### To run this app you should clone frontend repository:
