@@ -28,6 +28,11 @@ git clone https://github.com/L00ka5z78/myAppBE
 
 ### Install all dependencies. To do that, run npm install in PROJECTS DIRECTORY.
 
+## This project uses environment variables and remember to add following to your .env file
+PORT
+MONGO_URI
+JWT_SECRET
+
 Install mongoDB Compass on your device and remember to have mongo running in terminal.
 Sometimes there are problems to run mongo, therefor i will give few hints. 
 After installing on your device try to run it from terminal in your project. If it will not run,
