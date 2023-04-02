@@ -4,10 +4,10 @@ import {User, UserDocument} from '../models/User';
 import mongoose from 'mongoose';
 
 export const createTodo = async (
-    req: any,
+    req: Request | any,
     res: Response,
     next: (err?: Error) => any
-) => {
+): Promise<void> => {
     const {title, description} = req.body;
     const userId = req.user.id;
 
@@ -25,14 +25,14 @@ export const createTodo = async (
     }
 
     /**after migrating to TS create function doesnt work. rest of app works well. here it throws:
-     Todo validation failed: user: Cast to ObjectId failed for value "Model { User }" (type function) at path "user" because of "BSONTypeError"*/
+     Todo validation failed: user: path "user" is required"*/
 };
 
 export const getTodos = async (
     req: Request | any,
     res: Response,
     next: (err?: Error) => any
-) => {
+): Promise<void> => {
     try {
         const todos = await Todo.find({user: req.user});
         res.status(200).json({message: 'Task found!', todos});
@@ -46,7 +46,7 @@ export const getTodo = async (
     req: Request | any,
     res: Response,
     next: (err?: Error) => any
-) => {
+): Promise<void> => {
     const {id} = req.params;
     try {
         const todo = await Todo.findById(id);

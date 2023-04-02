@@ -40,6 +40,6 @@ router.put(
 );
 
 router.delete('/delete', authorize, deleteUser);
-// router.delete("/delete", deleteUser);    //bug with delete
+
 
 export default router;

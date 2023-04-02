@@ -82,7 +82,7 @@ export const login = async (req: Request | any, res: Response, next: (err?: Erro
     }
 };
 
-export const logout = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const logout = async (req: Request | any, res: Response, next: (err?: Error) => any ): Promise<void> => {
     res
         .clearCookie('token')
         .status(200)
