@@ -1,13 +1,9 @@
 import {Todo} from '../models/Todo';
 import {Request, Response} from 'express';
-import {User, UserDocument} from '../models/User';
-import mongoose from 'mongoose';
 
 export const createTodo = async (
     req: Request | any,
-    res: Response,
-    next: (err?: Error) => any
-): Promise<void> => {
+    res: Response): Promise<void> => {
     const {title, description} = req.body;
     const userId = req.user.id;
 
@@ -30,9 +26,7 @@ export const createTodo = async (
 
 export const getTodos = async (
     req: Request | any,
-    res: Response,
-    next: (err?: Error) => any
-): Promise<void> => {
+    res: Response): Promise<void> => {
     try {
         const todos = await Todo.find({user: req.user});
         res.status(200).json({message: 'Task found!', todos});
@@ -44,9 +38,7 @@ export const getTodos = async (
 
 export const getTodo = async (
     req: Request | any,
-    res: Response,
-    next: (err?: Error) => any
-): Promise<void> => {
+    res: Response): Promise<void> => {
     const {id} = req.params;
     try {
         const todo = await Todo.findById(id);
@@ -66,9 +58,7 @@ export const getTodo = async (
 
 export const updateTodo = async (
     req: Request | any,
-    res: Response,
-    next: (err?: Error) => any
-) => {
+    res: Response) => {
     const {id} = req.params;
     const {title, description, completed} = req.body;
     try {
@@ -92,9 +82,7 @@ export const updateTodo = async (
 
 export const deleteTodo = async (
     req: Request | any,
-    res: Response,
-    next: (err?: Error) => void
-) => {
+    res: Response) => {
     const {id} = req.params;
     try {
         const todo = await Todo.findById(id);

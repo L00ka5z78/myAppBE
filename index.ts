@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import express = require('express');
-// import * as cookieParser from 'cookie-parser';
 import cookieParser = require('cookie-parser');
 import {connectionDB} from './database/connectionDB';
 import todosRoutes from './routes/todos.route';
@@ -9,7 +8,6 @@ import usersRoutes from './routes/users.route';
 const app = express();
 
 dotenv.config();
-
 connectionDB();
 
 app.use(express.json());

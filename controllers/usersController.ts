@@ -4,7 +4,7 @@ import * as bcrypt from 'bcrypt';
 import {Todo} from '../models/Todo';
 import {Request, Response} from 'express';
 
-export const register = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const register = async (req: Request | any, res: Response) => {
     const {name, email, password, age} = req.body;
     try {
         let user = await User.findOne({email});
@@ -43,7 +43,7 @@ export const register = async (req: Request | any, res: Response, next: (err?: E
     }
 };
 
-export const login = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const login = async (req: Request | any, res: Response) => {
     const {email, password} = req.body;
 
     try {
@@ -69,8 +69,6 @@ export const login = async (req: Request | any, res: Response, next: (err?: Erro
         res.cookie('token', token, {
             httpOnly: true,
             expires: new Date(Date.now() + 360000),
-
-            //expiresIn 36000 doesnt work
         });
         const {password: pass, ...rest} = user._doc;
         res
@@ -82,14 +80,14 @@ export const login = async (req: Request | any, res: Response, next: (err?: Erro
     }
 };
 
-export const logout = async (req: Request | any, res: Response, next: (err?: Error) => any ): Promise<void> => {
+export const logout = async (req: Request | any, res: Response): Promise<void> => {
     res
         .clearCookie('token')
         .status(200)
         .json({message: 'User logged out successfully'});
 };
 
-export const getMe = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const getMe = async (req: Request | any, res: Response) => {
     try {
         const user: UserDocument = await User.findById(req.user);
         const {password: pass, ...rest} = user._doc;
@@ -97,7 +95,6 @@ export const getMe = async (req: Request | any, res: Response, next: (err?: Erro
         if (!user) {
             return res.status(404).json({message: 'User not found...', user: rest});
         }
-        //  const { password: pass, ...rest } = user._doc;    // _doc issue. Not sure if ti works properly
         return res.status(200).json({message: 'User found...', user: rest});
     } catch (error: any) {
         console.error(error.message);
@@ -105,7 +102,7 @@ export const getMe = async (req: Request | any, res: Response, next: (err?: Erro
     }
 };
 
-export const updateDetails = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const updateDetails = async (req: Request | any, res: Response) => {
     const {name, email, age} = req.body;
     try {
         const user = await User.findById(req.user);
@@ -130,7 +127,7 @@ export const updateDetails = async (req: Request | any, res: Response, next: (er
     }
 };
 
-export const updatePassword = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const updatePassword = async (req: Request | any, res: Response) => {
     const {password, newPassword} = req.body;
     try {
         let user = await User.findById(req.user);
@@ -157,17 +154,14 @@ export const updatePassword = async (req: Request | any, res: Response, next: (e
     }
 };
 
-export const deleteUser = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
+export const deleteUser = async (req: Request | any, res: Response) => {
     try {
         let user = await User.findById(req.user);
         if (!user) {
             return res.status(404).json({message: 'User not found'});
         }
-        //** if Request is without any it throws error like below*//
-        // Property 'user' does not exist on type 'Request<ParamsDiction
-        // ary, any, any, ParsedQs, Record<string, any>>'.
 
-        // delete tasks belongs to exact user if user is deleted
+        // delete tasks belongs to exact user when user is deleted
         const todo = await Todo.find({user: req.user});
         if (todo) {
             await Todo.deleteMany({user: req.user});
@@ -181,3 +175,7 @@ export const deleteUser = async (req: Request | any, res: Response, next: (err?:
         res.status(500).json({error: 'Internal server error'});
     }
 };
+
+//** if Request is without any it throws error like below*//
+// Property 'user' does not exist on type 'Request<ParamsDiction
+// any, any, any, ParsedQs, Record<string, any>>'.

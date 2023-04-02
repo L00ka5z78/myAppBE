@@ -1,5 +1,4 @@
 import mongoose, {Model, Schema} from 'mongoose';
-import {TodoDocument} from './Todo';
 
 type UserType = UserDocument & mongoose.Document;
 
@@ -10,7 +9,6 @@ export interface UserDocument extends mongoose.Document {
     email: string;
     password: string;
     age: number;
-    // user: UserDocument;
 }
 
 export const schema: Schema<UserDocument> = new mongoose.Schema(

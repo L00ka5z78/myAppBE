@@ -1,6 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import {NextFunction, Request, Response} from 'express';
-import * as express from 'express';
+import {Request, Response} from 'express';
 
 export const authorize = async (req: Request | any, res: Response, next: (err?: Error) => void) => {
     const token = req.cookies.token;
