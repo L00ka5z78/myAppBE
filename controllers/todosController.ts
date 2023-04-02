@@ -4,17 +4,19 @@ import {User, UserDocument} from '../models/User';
 import mongoose from 'mongoose';
 
 export const createTodo = async (
-    req: Request,
+    req: any,
     res: Response,
     next: (err?: Error) => any
 ) => {
     const {title, description} = req.body;
+    const userId = req.user.id;
+
     try {
         const todo = await Todo.create({
             title,
             description,
             completed: false,
-            user: User
+            user: userId
         });
         res.status(201).json({message: 'Task created successfully!', todo});
     } catch (error: any) {
